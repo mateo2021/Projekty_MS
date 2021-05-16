@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        button{
+            display: block;
+            margin: 20px auto;
+            padding: 6px 15px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            background-color: transparent;
+            border: 3px solid skyblue;
+            text-align: center;
+        }
+        div{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button>
+        Wylosuj imie dla dziecka
+    </button>
+    
+</body>
+
+<script>
+    const createDiv = document.createElement('div');
+    document.body.appendChild(createDiv);
+
+    const btn = document.querySelector('button');
+
+    const names =["Jowita","Dagmara","Jakub","Oliwia","Tania"];
+
+    const prefix=["Myślę, że ", "Zdecydowanie " , "Oczywiście ","Na 100% "];
+
+    function showName(){
+
+        let index = Math.floor(Math.random()*names.length);
+
+        createDiv.textContent = `${prefix[Math.floor(Math.random()*prefix.length)]}najlepsze imie to ${names[index]}`;
+    }
+
+    btn.addEventListener('click',showName);
+</script>
+</html>

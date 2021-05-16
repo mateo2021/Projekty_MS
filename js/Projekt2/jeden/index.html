@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwadrt scroll</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 9000vh;
+}
+div{
+    background-color: #000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+</style>
+<body>
+  
+</body>
+<script>
+    const square = document.querySelector("div");
+    const div = document.createElement('div')
+    document.body.appendChild(div);
+
+    let scroll =100;
+
+    div.style.width=scroll+"px";
+    div.style.height=scroll+"px";
+
+    const windowWidth = window.innerWidth;
+
+    
+    
+    let up = true;
+
+    const grow =()=>{
+        
+        if(scroll>=windowWidth/2){
+            up=false;
+        }else if(scroll<=0){
+            up=true;
+        }
+
+
+        if(up==true ){
+            scroll+=5;
+            div.style.width=`${scroll}px`;
+            div.style.height=`${scroll}px`;
+    
+        }
+        else{
+            scroll-=5;
+            div.style.width=`${scroll}px`;
+            div.style.height=`${scroll}px`;
+        }
+       
+        
+        
+        
+  
+      
+    }
+
+    window.addEventListener('scroll',grow);
+</script>
+</html>

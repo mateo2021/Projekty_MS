@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+
+.clearfix::after{
+    display: block;
+    content:"";
+    clear: both;
+
+}
+.wrap{
+    width: 30vw;
+    border: 10px solid black;
+    margin: 0 auto;
+    
+}
+span{
+    width:50%;
+    height: 15vw;
+    background-color: #ddd;
+    float: left;
+   
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+}
+span:nth-of-type(1),
+span:nth-of-type(4){
+    background-color: red;
+}
+
+</style>
+<body>
+    <div class="wrap clearfix">  
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <h1>float</h1>
+</body>
+</html>

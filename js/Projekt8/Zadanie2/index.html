@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            max-width: 80%;
+            margin: 20px auto;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .cursor{
+            opacity: 0;
+        }
+        .cursor.active{
+            opacity: 1;
+            translate: 0.4s;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <span class="text"></span><span class="cursor">|</span>
+    </div>
+   
+
+    <script>
+        const spanText = document.querySelector('.text');
+        const spanCursor = document.querySelector('.cursor');
+        const text = ['tekst1','tekst2..','tekst3...'];
+      
+
+        let activeText =0;
+        let indexLetter =-15
+        const time =50;
+
+        const addLetter =()=>{
+            if(indexLetter>=0){
+            spanText.textContent += text[activeText][indexLetter]
+            }
+            indexLetter++
+            if(indexLetter === text[activeText].length){
+
+                activeText++;
+                if(activeText === text.lenght){
+                    return;
+                }
+                
+                
+                return setTimeout(()=>{
+                indexLetter=-15;
+                spanText.textContent="";
+                addLetter();
+                },2000);
+            }
+
+            setTimeout(addLetter,100)
+        }
+
+        
+        
+        
+        addLetter();
+
+        setInterval(()=>spanCursor.classList.toggle('active'),400);
+
+    </script>
+</body>
+</html>

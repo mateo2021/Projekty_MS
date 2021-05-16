@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodawanie elementów na stronie</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+
+        button{
+            display: block;
+            font-size: 25px;
+            padding: 10px 8px;
+            margin: 10px auto 10px auto;
+            background-color: transparent;
+            border: 3px solid black;
+            cursor:pointer;
+        }
+        div{
+            display: inline-block;
+            border: 3px solid black;
+            width:50px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+        }
+        div.oval{
+            border-radius: 50%;
+            background-color:skyblue;
+        }
+       
+    </style>
+</head>
+<body>
+    <button>Dodaj przycisk</button>
+    
+</body>
+<script>
+    const button = document.querySelector("button");
+
+    let licznik = 1;
+    const addSquare = ()=>{        
+        const element = document.createElement("div");
+        element.textContent=licznik;
+        
+        if(licznik%5==0){
+            element.classList.add("oval");
+        } 
+        licznik++;              
+        document.body.appendChild(element);
+    }
+
+    button.addEventListener("click",addSquare);
+
+</script>
+</html>

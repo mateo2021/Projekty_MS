@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            max-width: 80%;
+            margin: 20px auto;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .cursor{
+            opacity: 0;
+        }
+        .cursor.active{
+            opacity: 1;
+            translate: 0.4s;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <span class="text"></span><span class="cursor">|</span>
+    </div>
+   
+
+    <script>
+        const spanText = document.querySelector('.text');
+        const spanCursor = document.querySelector('.cursor');
+        const text = ` Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit. Nisi libero dolores,
+        maxime atque aspernatur dolorem nostrum aperiam ea
+      `
+
+        let indexText =0;
+        const time =50;
+
+        const addLetter =()=>{
+            spanText.textContent +=text[indexText];
+            indexText++;
+
+            if(indexText == text.length){
+                clearInterval(indexTyping);
+            }
+        }
+        
+        const indexTyping = setInterval(addLetter,time);
+
+        setInterval(()=>spanCursor.classList.toggle('active'),400);
+
+    </script>
+</body>
+</html>

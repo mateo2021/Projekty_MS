@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: relative;
+            width: 100px;
+            height: 30px;
+            border: 2px solid darkblue;
+            background-color: skyblue;
+        }
+         p{
+          width: 100%;
+          height:100%;
+          line-height: 30px;
+          text-align: center;
+        }
+     
+    </style>
+</head>
+<body>
+   
+    <form action="">
+        <input type="text" class="one"> * <input type="text" class="two">
+        <button>Pokaz wynik</button>
+    </form>
+     <h3>Wynik wynosi</h3>
+        <div>
+            <p>0</p>
+        </div>
+    
+    <script>
+
+        const one = document.querySelector('.one');
+        const two = document.querySelector('.two');
+        const span = document.querySelector('div p');
+        const form = document.querySelector('form');
+
+
+        const show = (e)=>{
+            e.preventDefault();
+
+            const inputOne = one.value;
+            const inputTwo = two.value;
+
+
+            const wynik = inputOne*inputTwo;
+
+            span.textContent = wynik;
+
+            one.value = "";
+            two.value = "";
+
+        }
+
+        
+        form.addEventListener('submit',show)
+    </script>
+    
+</body>
+</html>

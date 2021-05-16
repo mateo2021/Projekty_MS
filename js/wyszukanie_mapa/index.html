@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Wyszukiwanie lokalizacji na mapie</title>
+		<link rel="stylesheet" href="script/leaflet.ie.css">
+      	<link rel="stylesheet" href="script/leaflet.css" />		
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script src="script/leaflet.js"></script>
+		<script src="script/jquery-1.8.2.min.js"></script>
+	</head>
+	<body>
+		<div id="mapa"></div>
+		<div id="search">
+			<input type="text" name="dodaj_mape" value="" id="find" size="10" />
+			<button type="button" onclick="find_point();">Wyszukaj</button>
+			<div id="info"/>
+		</div>
+		<script src="script/mapa.js"></script>
+	</body>
+</html>

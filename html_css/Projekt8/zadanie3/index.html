@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        body{
+            overflow: hidden;
+        }
+
+        .navigation  div{
+            position: absolute;
+            top: 0;
+            left: -40%;
+            height: 100vh;
+            width: 30%;
+            background-color: #000;
+            transition: linear 0.3s;
+        }
+
+         .navigation div.active{
+            
+            left:0;
+        }
+
+        .menu{
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 50px;
+            cursor: pointer;
+            
+        }
+        .fas{
+            display: none;
+           
+        }
+        .show{
+            display: block;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <i class="fas fa-bars show"></i>
+        <i class="fas fa-times "></i>
+    </div>
+    <nav class="navigation">
+      <div></div>
+    </nav>
+
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    <script>
+        // let div = document.querySelector('.navigation>div');
+        // let burger = document.querySelector('.fa-bars');
+        // let close = document.querySelector('.fa-times');
+        // let menu = document.querySelector('.menu');
+        
+        // menu.addEventListener('click',function(){
+        //     div.classList.toggle('active');
+        //     burger.classList.toggle('show');
+        //     close.classList.toggle('show');
+        // })
+
+        $('.menu').on('click',function(){
+          $('.navigation>div').toggleClass('active');
+          $('.fa-bars').toggleClass('show');
+          $('.fa-times').toggleClass('show');  
+        })
+
+    </script>
+    
+</body>
+</html>

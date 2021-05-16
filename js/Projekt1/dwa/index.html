@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Lista</title>
+    <style>
+        button{
+            display: block;
+            margin: 10px auto;
+            padding: 10px 8px;
+            font-size: 16px;
+            border: 3px solid black;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .big{
+            font-size: 29px;
+        }
+    </style>
+</head>
+<body>
+    <button>Dodaj element do listy</button>
+    <ul>
+
+    </ul>
+</body>
+
+<script>
+    const btn = document.querySelector("button");
+    const ul = document.querySelector("ul")
+
+    let licznik=1;
+    
+    const addLi = ()=>{
+      const elementLi = document.createElement("li");
+      elementLi.textContent=licznik;
+
+        if(licznik%3==0){
+            elementLi.classList.add('big');
+        }
+      licznik = licznik+2;
+      ul.appendChild(elementLi);
+    }
+
+    btn.addEventListener("click",addLi)
+
+</script>
+</html>

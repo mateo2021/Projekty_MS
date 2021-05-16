@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista to do app</title>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <button>Dodaj zadanie</button>
+    </form>
+    <h1>Lista zadań: <span>0</span></h1>
+    <ul></ul>
+
+    <script>
+        const form = document.querySelector('form');
+        const ul = document.querySelector('ul');
+        const input = document.querySelector('input');
+        const taskNumber = document.querySelector('h1 span');
+
+        const removeElement = (e)=>{
+            e.target.parentNode.remove();
+            const liElements = document.querySelectorAll('li').length;
+            taskNumber.textContent = liElements;
+        }
+
+
+        const addElement = (e)=>{
+            e.preventDefault();
+
+            const titleTask = input.value;
+
+            if(titleTask === "") return;
+            const task = document.createElement('li');
+            task.innerHTML = titleTask + "  <button> Usuń </button>";
+            ul.appendChild(task);
+            input.value = "";
+
+            const liElements = document.querySelectorAll('li').length;
+            taskNumber.textContent = liElements;
+
+            task.querySelector('button').addEventListener('click',removeElement);
+
+    
+        }
+
+
+        form.addEventListener('submit',addElement);
+    </script>
+</body>
+</html>

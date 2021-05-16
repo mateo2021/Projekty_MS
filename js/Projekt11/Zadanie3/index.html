@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .time{
+            position: absolute;
+            width:100vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 60px;
+            text-align: center;
+            font-family: monospace;
+        }
+        button{
+            font-size: 44px;
+            margin: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="main">Start</button>
+    <button class="reset">Reset</button>
+
+    <div class="time">
+        <p>Czas do startu: </p>
+        <div> --- </div>
+    </div>
+
+    <script>
+        const start = document.querySelector('.main');
+        const resetBtn = document.querySelector('.reset');
+        const divTime = document.querySelector('.time div');
+        
+        let time =0;
+        let active = false;
+        let idSet;
+
+        const timer = ()=>{
+            if(active==false){
+                start.textContent= "Pauza";
+                active = true;
+                idSet = setInterval(startMain,10);
+            }else{
+                active = false;
+                start.textContent = "Start";
+                clearInterval(idSet);
+            }
+        }
+
+
+        const startMain  = ()=>{
+            time ++;
+
+            divTime.textContent = (time/100).toFixed(2);            
+        }
+
+        const reset = ()=>{
+            time =0;
+            divTime.textContent = "---";
+            start.textContent = "Start";
+            clearInterval(idSet);
+        }
+
+        start.addEventListener('click',timer);
+        resetBtn.addEventListener('click',reset);
+    </script>
+</body>
+</html>

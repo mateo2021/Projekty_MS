@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przycisk4</title>
+    <style>
+         button{
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           font-size: 22px;
+           line-height: 30px;
+           padding: 10px 40px;
+           background-color: transparent;
+           cursor: pointer;
+           border: 4px solid black;
+           overflow: hidden;
+         
+        }
+        button::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 110px);
+            transform: translate(-50%,-50%); 
+	        border-top: 30px solid transparent;
+	        border-bottom: 30px solid transparent;
+	        border-left: 20px solid #000;
+            transition: linear 0.2s;
+        }
+
+        button:hover::after{
+            left: calc(50% - 80px); 
+        }
+    </style>
+</head>
+<body>
+    <button>Przycisk4</button>
+</body>
+</html>

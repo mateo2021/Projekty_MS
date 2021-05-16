@@ -1,0 +1,5 @@
+Użytkownik: Mateo WYKONAŁ następujące zlecenia: 
+Zlecenie[12/12/2020, Region=dads, Adres=ads, Status=wykonane]
+Zlecenie[12/12/2020, Region=dads, Adres=ads, Status=wykonane]
+Zlecenie[12/12/2020, Region=dads, Adres=ads, Status=wykonane]
+Zlecenie[12/12/2020, Region=d, Adres=ads, Status=wykonane]

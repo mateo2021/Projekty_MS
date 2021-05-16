@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="bigger">Powieksz</button>
+    <button class="smaller">Pomniejsz</button>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim necessitatibus nesciunt eum praesentium, vel 
+        repudiandae aperiam aliquid veniam, molestiae architecto in deserunt voluptatum. Earum nemo sunt iste assumenda excepturi est inventore.
+        Repudiandae harum perferendis ad laboriosam recusandae ab, sequi excepturi eveniet, reiciendis numquam deleniti a eaque pariatur vitae
+        quo reprehenderit esse ipsum quos eligendi? Molestiae numquam eligendi architecto officia quasi, tenetur eos consequuntur? Ullam simi
+        lique, assumenda officia aspernatur quasi ex iste. Commodi eveniet magnam fugiat, expedita blanditiis consequatur recusandae error quis
+        . Minima architecto ut dolorum cum quasi tempore harum dolores nam soluta placeat aut tenetur, ipsam officiis quas corporis reiciendis.
+    </p>
+
+    <script>
+        let big = document.querySelector(".bigger");
+        let small = document.querySelector(".smaller");
+        let p = document.querySelector('p');
+
+        let textSize = 16;
+
+        big.addEventListener('click',function(){
+           
+            textSize++;
+            p.style.fontSize = textSize + "px";
+        })
+
+        function smaller(){
+            textSize--;
+            p.style.fontSize = textSize +"px";
+        }
+
+        small.addEventListener('click',smaller);
+    </script>
+</body>
+</html>

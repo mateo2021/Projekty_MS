@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 400vh;
+}
+
+.wrap{
+    width: 60%;
+    margin: 0 auto;
+}
+nav{
+    position: fixed;
+    left: 0;
+    bottom: -170px;
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    transition: .3s linear;
+}
+.arrow {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 50%;
+    background-color: skyblue;
+    transition: .3s linear;
+}
+
+.arrow i{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0);
+    font-size: 30px;
+    transition: .3s linear;
+}
+
+.arrow.active{
+    bottom: 30%;
+}
+.arrow.active i{
+    transform: translate(-50%,-50%) rotate(180deg);
+} 
+ nav.active{
+    bottom:0;
+}

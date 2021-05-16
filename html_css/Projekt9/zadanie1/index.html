@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+
+        .article{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .article.blur{
+            filter: blur(3px);
+        }
+        .article p{
+            margin: 30px 0 30px 0;
+            text-align: center;
+        }
+        .article button{
+            display: block;
+            padding: 10px 20px;
+            background-color:transparent;
+            border: 2px solid black;   
+            margin: 0 auto 30px auto;   
+            cursor: pointer;      
+        }
+       .article img{
+         display: block;
+         margin: 0 auto;
+       }
+
+       /* modal */
+       .modal-wrap.active{
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           width: 80vw;
+           height: 65vh;
+           background-color: skyblue;
+           border: 3px solid black;
+           z-index: 5;
+       }
+       .modal-wrap .exit{
+           display: none;
+       }
+       
+       .modal-wrap.active .exit{
+            display: block;
+            position: absolute;
+            top:-3%;
+            right: -2%;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid black;
+            line-height: 35px;
+            cursor: pointer;
+            text-align: center;
+            background-color: #fff;
+       }
+       .modal-wrap.active .modal-top{
+           position: absolute;
+           height: 20%;
+           left: 0;
+           right: 0;
+           top: 0;
+           background-color:green;
+       }
+       .modal-wrap.active .modal-bottom{
+           position: absolute;
+           height: 20%;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background-color:green;
+       }
+
+      
+
+       
+
+    </style>
+</head>
+<body>
+    <section class="article">
+       <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Accusamus odit architecto mollitia eos labore debitis ex dolorum
+        psum quos, quae tenetur, tempore recusandae nemo vel saepe! Esse 
+        ullam quod ipsum sit cumque sunt iste quam sed, itaque ea voluptatum
+         consequuntur ratione autem nostrumo, magnam qui</p>
+
+    <button>Kup Teraz</button>
+    <img src="image640.jpg" alt="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Rerum numquam blanditiis fugiat qui fugit? Atque voluptatum
+              deserunt quisquam magnam labore consectetur nihil ea numqua
+              ae vitae quasi ut, similique consequuntur incidunt vel natus 
+              quia, sunt distinctio adipisci quos, saepe repellat repudiandae
+              ! Quas eum ut eaque sed laudantium illo non quia.</p>
+
+</section>
+<section class="modal-wrap">
+    <div class="modal-top"></div>
+    <div class="modal-middle"></div>
+    <div class="modal-bottom"></div>
+    <div class="exit">X</div>
+</section>
+
+
+<script>
+    let open = document.querySelector("button");
+    let article = document.querySelector(".article");
+    let modal = document.querySelector(".modal-wrap");
+
+    let exit = document.querySelector(".exit");
+
+    open.addEventListener('click',function(){
+        modal.classList.add("active");
+        article.classList.add("blur");
+    })
+
+    exit.addEventListener('click',function(){
+        modal.classList.remove("active");
+        article.classList.remove('blur');
+    })
+</script>
+</body>
+</html>

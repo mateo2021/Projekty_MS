@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 30px;
+            height: 30px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: disco 1s infinite linear ;
+
+        }
+        div:nth-of-type(2){
+            animation-delay: .2s;
+        }
+        div:nth-of-type(3){
+            animation-delay: .4s;
+        }
+        div:nth-of-type(4){
+            animation-delay: .6s;
+        }
+        div:nth-of-type(5){
+            animation-delay: .8s;
+        }
+        div:nth-of-type(5){
+            animation-direction: reverse;
+            animation-duration:  3s;
+        }
+      
+ 
+
+        @keyframes disco{
+            0%{
+            top: 0;
+            left: 0; 
+            }
+            25%{
+            top: 0;
+            left: calc(100% - 30px);
+            background-color: #f00; 
+            }
+            50%{
+            top: calc(100% - 30px);
+            left: calc(100% - 30px); 
+            background-color: green;
+            }
+            75%{
+            top: calc(100% - 30px);
+            left: 0; 
+            background-color: blue;
+            }
+            100%{
+            top: 0;
+            left: 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

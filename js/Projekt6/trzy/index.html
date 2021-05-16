@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            padding: 15px 20px;
+        }
+        button{
+            font-size: 20px;
+        }
+        form{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input  id='add' type="text">
+        <button>Dodaj</button>
+    </form>
+    <div>
+
+    </div>
+</body>
+
+<script>
+   const inputValue= document.getElementById('add');
+   const btn = document.querySelector('button');
+
+   const tab =[];
+
+
+   const add =(e)=>{
+    e.preventDefault();
+
+    const words = inputValue.value;
+
+    if(words.length){
+
+        for(word of tab){
+            if(word == words ){
+                alert("Takie imie już podano");
+                inputValue.value = "";
+                return;
+            }
+        }
+        tab.push(words);
+        document.querySelector('div').textContent += words +", ";
+        inputValue.value = " "
+        console.log(tab);
+    }else{
+        alert('Podaj imie');
+    }
+}
+
+   btn.addEventListener('click',add);
+
+</script>
+
+</html>

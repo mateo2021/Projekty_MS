@@ -1,0 +1,12 @@
+body {
+  text-align: center;
+}
+
+.infoDiv {
+  padding: 20px;
+}
+
+.infoDiv div {
+  border-top: 3px solid black;
+  padding: 25px 20px;
+}

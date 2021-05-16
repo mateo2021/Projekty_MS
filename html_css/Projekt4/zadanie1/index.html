@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:#222;
+            overflow: hidden;
+            animation: bgc 10s linear infinite;
+        }
+        .grass{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background-color: #777;
+            animation: grass linear 10s infinite;
+
+        }
+        .sun{
+            position: absolute;
+            left: 15%;
+            bottom: 10%;
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: sunset 10s linear infinite;
+        }
+
+        @keyframes sunset{
+            0%{
+            left: 10%;
+            bottom: 10%; 
+            background-color: yellowgreen;
+            }
+            25%{
+            left: 30%;
+            bottom: 40%; 
+            background-color: yellowgreen;
+            }
+           
+            50%{
+            left: 50%;
+            bottom: 70%;
+            background-color: yellow;   
+            }
+            75%{
+            left: 70%;
+            bottom: 40%; 
+            background-color: pink;
+            }
+           
+            100%{
+            background-color: pink;
+            left:90%;
+            bottom:10%;
+            }
+        }
+        @keyframes bgc {
+            0%{
+                background-color: #222;
+            }
+            20%{
+                background-color: #555;
+            }
+
+            50%{
+                background-color: skyblue;
+            }
+            75%{
+                background-color: #555;
+            }
+            100%{
+                background-color: #222;
+            }
+        }
+        @keyframes grass{
+            50%{
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="grass"></div>
+</body>
+</html>

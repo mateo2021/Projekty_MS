@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrap">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptate odit ipsum pariatur maiores ipsam cupiditate,
+             aliquam deserunt officia impedit voluptas quibusdam aut consequuntur accusantium possimus dolores, dolor, non expedita recusandae
+              molestias sed iure minus repellendus praesentium! Fugiat, veniam! Excepturi aut aspernatur mollitia distinctio neque repellat saepe, 
+              molestias possimus eaque quos cupiditate odit illum, totam fugit assumenda. Neque delectus sunt dolorum voluptas deserunt ut suscipit 
+              adipisci, totam natus sequi, sapiente fuga, autem dolore corporis ipsum eos quod nostrum! Itaque in maxime, ut laudantium dolorem enim
+             explicabo cum dolore molestiae expedita ipsa
+             vel cupiditate! Reiciendis voluptate assumenda sit laborum. Excepturi, nihil.</p>
+    </div>
+    <div class="arrow ">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <nav>
+
+    </nav>
+    
+
+    <script>
+        let arrow = document.querySelector('.arrow');
+        let nav = document.querySelector('nav')
+
+
+        arrow.addEventListener('click',function(){
+          arrow.classList.toggle('active') ;
+          nav.classList.toggle('active');
+        })
+
+
+    </script>
+</body>
+</html>

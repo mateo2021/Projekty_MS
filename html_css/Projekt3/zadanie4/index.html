@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przycisk3</title>
+    <style>
+
+         button{
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           font-size: 22px;
+           padding: 20px 40px;
+           background-color: transparent;
+           cursor: pointer;
+           border: 4px solid black;
+           transition: linear 0.2s 0.1s;
+           overflow: hidden;
+        }
+        button::after{
+            content: "";
+            position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(55%,-50%); 
+           height: 50%;
+           width: 110%;
+           background-color: brown;
+           transition: transform linear .2s, height .2s .2s;
+           z-index: -1;
+
+        }
+        button:hover::after{
+            transform: translate(-50%,-50%);
+            height: 100%;
+        }
+        button:hover{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <button>Przycisk3</button>
+</body>
+</html>

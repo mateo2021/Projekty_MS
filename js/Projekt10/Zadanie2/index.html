@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure_2</title>
+</head>
+<body>
+    
+    <script>
+
+        const timer=()=>{
+
+            let timeFrontOfComputer =0;
+            document.body.textContent =`Czas przed ekranem: ${0} s`;
+
+            function addTime(){
+                timeFrontOfComputer++            
+                document.body.textContent =`Czas przed ekranem: ${timeFrontOfComputer} s`;
+                
+            }
+
+            return addTime;
+        }
+
+        const time = timer();
+
+        setInterval(time,1000)
+
+    </script>
+</body>
+</html>

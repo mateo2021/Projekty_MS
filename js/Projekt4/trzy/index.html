@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background-color: #000;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+    const div = document.querySelector('div');
+
+    let positionLeft = 100;
+    let positionTop = 91;
+
+    div.style.left = `${positionLeft}px`;
+    div.style.top = `${positionTop}px`;
+
+    let move = false;
+
+    let offsetTop;
+    let offdetLeft;
+
+
+    div.addEventListener('mousedown',function(e){
+        offsetTop =e.offsetY;
+        offdetLeft=e.offsetX;
+        div.style.backgroundColor="gray";
+        move=true;
+    })
+
+    div.addEventListener('mousemove',function(e){
+        if(move){
+        let x = e.clientX;
+        let y = e.clientY;
+
+        div.style.left = `${x-offdetLeft}px`;
+        div.style.top = `${y-offsetTop}px`;
+    }})
+
+    div.addEventListener('mouseup',function(){
+        div.style.backgroundColor="black";
+        move=false;
+    })
+
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            
+        }
+        p{
+            text-align: center;
+            font-size: 30px;
+            color:white;
+            margin: 22px;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            color: white;
+            font-family: monospace;
+        }
+      div{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+      }
+    </style>
+</head>
+<body>
+    <div>
+    <p>Strona wystartuje za:</p>
+    <h1>
+        <span class="d">.</span> d:
+        <span class="h">.</span> h:
+        <span class="m">.</span> m:
+        <span class="s">.</span> s.
+    </h1>
+</div>
+</body>
+<script>
+   const endTime = new Date('2020-08-01 14:42:50').getTime(); 
+
+   setInterval(()=>{
+    const nowTime = new Date().getTime();
+
+    const days = Math.floor((endTime /(1000 *60*60*24))-(nowTime/(1000*60*60*24)));
+    const hours =Math.floor((endTime/(1000 *60*60)-nowTime/(1000*60*60))%24);
+    const minutes=Math.floor((endTime/(1000*60)-nowTime/(1000*60))%60);
+    const secunds=Math.floor((endTime/(1000)-nowTime/(1000))%60);
+
+    console.log(minutes);
+
+    document.querySelector('.d').textContent = days;
+    document.querySelector('.h').textContent = hours;
+    document.querySelector('.m').textContent = minutes;
+    document.querySelector('.s').textContent = secunds;
+   },1000)
+</script>
+</html>

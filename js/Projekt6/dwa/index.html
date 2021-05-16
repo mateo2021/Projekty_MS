@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        button{
+            display: block;
+            margin: 20px auto;
+            padding: 6px 15px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            background-color: transparent;
+            border: 3px solid skyblue;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <button>
+       Wygeneruj losowe kody
+    </button>
+    <section>
+
+    </section>
+    
+</body>
+
+<script>
+    const numbers ="ABCDEFGHIJKLMNO1234567890";
+
+    const btn = document.querySelector('button');
+    const section = document.querySelector("section");
+    
+    const size = 1000;
+    const keyLong =10;
+    let code;
+
+    const showCode=()=>{
+        for(let i=0;i<size;i++){
+            code="";
+            for(let i=0;i<keyLong;i++){
+                const index = Math.floor(Math.random()*numbers.length)
+                code+=numbers[index];
+            }
+            const div = document.createElement('div');
+            div.textContent = code;
+            section.appendChild(div);
+        }
+    }
+
+
+    btn.addEventListener('click',showCode);
+ 
+</script>
+</html>

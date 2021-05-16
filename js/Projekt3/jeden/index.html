@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listax1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: none;
+            padding: 3px;
+            margin-left: 50px;
+        }
+      
+        button{
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button>Start</button>
+    <ul>
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+        <li>element 4</li>
+        <li>element 5</li>
+        <li>element 6</li>
+        <li>element 7</li>
+        <li>element 8</li>
+        <li>element 9</li>
+        <li>element 10</li>
+    </ul>
+    
+</body>
+<script>
+    const btn = document.querySelector("button");
+    const li = [...document.querySelectorAll('li')];
+    let font = 16;
+
+     li.forEach((item)=>{
+        item.style.fontSize=font+"px";
+     })
+
+
+    const showLi =()=>{
+        for(let i=0;i<li.length;i++){
+            li[i].style.display="block";
+            li[i].style.fontSize=font+"px";
+
+        }
+        font+=4;
+    }
+
+    btn.addEventListener('click',showLi);
+</script>
+</html>

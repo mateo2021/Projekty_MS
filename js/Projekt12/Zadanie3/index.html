@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <button>Dodaj do listy</button>
+    </form>
+    <h3>Wyszukaj: </h3>
+    <input class="find" type="text">
+    <h1>Liczba elementów w liście: <span>0</span></h1>
+    <ul></ul>
+
+    <script>
+
+        const form = document.querySelector('form');
+        const input = document.querySelector('input');
+        const find = document.querySelector(".find");
+        const number = document.querySelector('h1 span');
+        const ul = document.querySelector('ul');
+        let li = null ;
+
+
+        const refreshNumber=()=>{
+            li = document.querySelectorAll('li');  
+             number.textContent=li.length;
+        }
+
+
+        const removeTask = (e)=>{
+            e.target.parentNode.remove();
+            refreshNumber();
+        }
+        
+
+        const addElementToList = (e)=>{
+            e.preventDefault();
+
+            const inputText = input.value;
+            if(inputText === "") return;
+            const task = document.createElement('li');
+            task.classList.add("task");
+            task.innerHTML = inputText + "  <button> Usuń </button>";
+        
+            ul.appendChild(task);
+
+            input.value = ""   
+
+            refreshNumber();
+
+            task.querySelector('button').addEventListener('click',removeTask);    
+        }
+
+        const findWord =(e)=>{
+            let listOFli = [...li];
+            const text = e.target.value.toLowerCase();
+
+            listOFli= listOFli.filter(word => word.textContent.toLowerCase().includes(text));
+
+            ul.textContent = "";
+            listOFli.forEach(word => ul.appendChild(word));
+        }
+
+        form.addEventListener('submit',addElementToList);
+
+        find.addEventListener('input',findWord);
+
+    </script>
+</body>
+</html>

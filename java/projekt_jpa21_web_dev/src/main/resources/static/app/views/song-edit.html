@@ -1,0 +1,64 @@
+<div>
+
+    <div class="alert alert-info margin-top-5 col-sm-3 message" data-ng-show="message">{{message}}</div>
+
+    <h1 class="text-center padd">Edycja listy</h1>
+
+
+        <table class="table">
+            <thead class="thead-default">
+            <tr>
+
+                <th>Imie</th>
+                <th>Nazwa</th>
+                <th>Czas trwania</th>
+                <th>Data</th>
+                <th>Album</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+
+                <td><input type="text" data-ng-model="name"/></td>
+                <td>
+                    <select required class="select select--filter form-control" id="state-list-filter" data-ng-model="author"
+                            data-ng-options="author.name for author in authors" name="author">
+                    </select>
+
+                    <button type="button" class="btn btn-info btn-sm" data-ng-click="editAuthor()">Edytuj Autora</button>
+                </td>
+
+                <td><input type="text" data-ng-model="duration" id="duration"/></td>
+                <td><input type="text" data-ng-model="date" id="date"/></td>
+                <td><input type="text" data-ng-model="album"/></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div data-ng-show="editAuthorName">
+                        <form id="authorEdit">
+                            <input type="text" data-ng-model="authorName">
+                            <button class="btn btn-secondary btn-sm" data-ng-click="edit()" form="authorEdit">edytuj</button>
+                        </form>
+                    </div>
+
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+
+        </table>
+
+
+    <div class="float-right">
+        <button data-ng-click="updateSong()" class="btn btn-secondary">Uaktualnij piosenkę</button>
+        <a data-ui-sref="home" class="btn btn-secondary" role="button">Powrót</a>
+    </div>
+
+
+</div>

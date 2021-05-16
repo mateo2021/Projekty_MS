@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .clearfix::after {
+         content: "";
+         clear: both;
+         display: table;
+        }   
+        
+        .wrap{
+            max-width: 1000px;
+            margin: 0 auto;        
+
+        }
+        .wrap,
+        nav.desktop,
+        header{
+            height: 360px;
+        }
+        nav.desktop{
+            float: left;
+            width: 300px;
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav.desktop a{
+            display: block;
+            line-height: 72px;
+            font-size: 22px;
+            color: black;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            padding:  0 5px 0 30px;
+        }
+        nav.desktop i{
+            width:50px;
+            border-right: 2px solid black;
+            margin-right: 30px;
+            transition: .3s;
+        }
+        header{
+            float: left;
+            width: calc(100% - 300px);
+            background-image: url(lyon-4883769_640.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        nav.desktop a:hover i {
+            margin-right: 50px;
+        }
+
+        nav.desktop a:hover {
+            color: white;
+            background-color: royalblue
+        }
+        h1{
+            font-size: 40px;
+            font-family: arial;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            margin-top:50px;
+        }
+
+
+
+        nav.mobile{
+            display: none;
+        }
+
+        @media(max-width: 1024px){
+            nav.desktop{
+                display: none;
+            }
+            
+            nav.mobile{
+                display: block;
+            }
+            header{
+                width: 100%;
+            }
+
+            nav.mobile{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 100vh;
+                background-color: #000;
+            }
+           
+            nav.mobile a{
+                display: block;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                line-height: calc(70vh/5);
+                margin-bottom: 10px;
+            }
+            nav.mobile i{
+                font-size: 22px;
+            }
+            h1{
+                font-size: 25px;
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="desktop">
+            <ul>
+              <li><a href="#"><i class="far fa-play-circle"></i>Start</a></li>
+              <li><a href="#"><i class="fas fa-cart-arrow-down"></i>Oferta</a></li>
+              <li><a href="#"><i class="fas fa-rss"></i>Blog</a></li>
+              <li><a href="#"><i class="fas fa-calendar-week"></i>Terminarz</a></li>
+              <li><a href="#"><i class="fas fa-id-card-alt"></i>Kontakt</a></li>
+            </ul>
+        </nav>
+        
+
+    
+        <nav class="mobile">
+            <ul>
+              <li><a href="#"><i class="far fa-play-circle"></i></a></li>
+              <li><a href="#"><i class="fas fa-cart-arrow-down"></i></a></li>
+              <li><a href="#"><i class="fas fa-rss"></i></a></li>
+              <li><a href="#"><i class="fas fa-calendar-week"></i></a></li>
+              <li><a href="#"><i class="fas fa-id-card-alt"></i></a></li>
+            </ul>
+        </nav>
+        <header></header>
+    </div>
+    <h1>To jest twoj wybor</h1>
+</body>
+</html>

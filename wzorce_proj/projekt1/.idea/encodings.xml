@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Ksiazka.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Magazyn.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Main.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Obraz.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Przedmiot.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/java/Wzorce/Rzezba.java" charset="windows-1250" />
+  </component>
+</project>

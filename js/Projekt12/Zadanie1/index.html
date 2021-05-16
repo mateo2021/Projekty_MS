@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 20px;
+            padding: 5px;
+        }
+        ul{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+
+    <ul>
+        <li>Banan</li>
+        <li>Batat</li>
+        <li>ogórek</li>
+        <li>wiśnia</li>
+        <li>jabłko</li>
+        <li>kiwi</li>
+        <li>śliwka</li>
+        <li>morela</li>
+        <li>Kaktus</li>
+    </ul>
+
+    <script>    
+        const input = document.querySelector('input');
+        const ul = document.querySelector('ul')
+        const li = document.querySelectorAll('li');
+
+        const search =(e)=>{
+            const inputText = e.target.value.toLowerCase();
+            let tasks = [...li];
+
+            tasks = tasks.filter(task => task.textContent.toLowerCase().includes(inputText));
+
+            ul.textContent = "";
+            tasks.forEach(task =>ul.appendChild(task));
+            console.log(tasks);
+
+        }
+
+
+        input.addEventListener('input',search);
+    </script>
+</body>
+</html>

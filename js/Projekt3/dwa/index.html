@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let size =10;
+    let orderElement =1;
+
+    const init=()=>{
+        const btn = document.createElement("button");
+        const ul= document.createElement("ul");
+        btn.textContent="Dodaj listę";
+
+        document.body.appendChild(btn); 
+        document.body.appendChild(ul);
+
+    }
+    
+
+   
+   
+    const createElement=()=>{       
+               
+        for(i=0;i<=10;i++){
+          const li= document.createElement("li");
+          li.textContent="Element " + orderElement;
+          size++;
+          li.style.fontSize=size+"px";
+          orderElement++;
+          document.querySelector('ul').appendChild(li) 
+        }
+    }
+
+    init();
+
+    document.querySelector("button").addEventListener("click",createElement);
+
+  
+</script>
+</html>

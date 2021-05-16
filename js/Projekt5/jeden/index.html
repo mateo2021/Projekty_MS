@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 5vh;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label,
+        input{
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        div{
+            border: 3px solid black;
+            font-size: 35px;
+            margin: 20px;
+        }
+        .active{
+            background-color: #000;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <label for="pass">Wprowadz hasło:</label><input id="pass" type="text">
+    <div class="message"></div>
+</body>
+<script>
+
+    const input = document.getElementById('pass');
+    const div = document.querySelector('div');
+
+    const password= ["user","wiosna","alex"];
+    const message=["uzytkowniku witaj","piekna pora roku","piesek"];
+
+    div.textContent= "";
+    input.addEventListener('input',function(e){
+          let value = this.value;
+    
+
+          password.forEach((item,index)=>{
+              if(value===item){
+            div.textContent=message[index];
+            e.target.value=" ";
+          }})      
+    })
+    input.addEventListener('focus',function(){
+        input.classList.add('active');
+    })
+    input.addEventListener('blur',function(){
+        input.classList.remove('active');
+    })
+
+
+    //    if(e.target.value===password){
+    //         div.textContent=message;
+    //         input.value="";
+    //    }
+</script>
+</html>

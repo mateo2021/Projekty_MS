@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 40px;
+        }
+        .duzy{
+            font-size: 80px;
+        }
+        .maly{
+            font-size: 10px;
+        }
+        .obramowanie{
+            border:40px solid black;
+        }
+      
+    </style>
+</head>
+<body>
+    <button class="smaller">2XMniejszy</button>
+    <button class="bigger">2XWiekszy</button>
+    <button class="border">Obramowanie</button>
+    <h1>Napis</h1>
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>   
+
+    <script>
+        $('.smaller').click(function(){
+            $('h1').toggleClass('maly');
+        })
+        $('.bigger').click(function(){
+            $('h1').toggleClass('duzy');
+        })
+        $('.border').click(function(){
+            $('h1').toggleClass('obramowanie');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+/* font-family: 'Roboto', sans-serif; */
+
+/* font-family: 'Oswald', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Oswald", "Arial", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+nav {
+  max-width: 1280px;
+  margin: 30px auto;
+  text-align: right;
+  width: 100%;
+}
+
+nav a {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #555;
+  padding: 10px;
+  margin: 0 20px;
+  letter-spacing: 1px;
+}
+
+nav a.logs {
+  padding: 15px 30px;
+  border: none;
+  color: white;
+  margin: 0 60px 0 90px;
+  background: royalblue;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px royalblue;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav a.logs:hover {
+  box-shadow: 0 0 0 9px white, 0 0 0 12px royalblue;
+}
+
+nav a:nth-of-type(4):hover {
+  border-bottom: 2px solid #555;
+  color: black;
+}
+
+nav a:nth-of-type(3):hover {
+  border-bottom: 2px solid #555;
+  color: black;
+}
+
+nav a:nth-of-type(2):hover {
+  border-bottom: 2px solid #555;
+  color: black;
+}
+
+nav a:nth-of-type(1):hover {
+  border-bottom: 2px solid #555;
+  color: black;
+}
+
+/* koniec mq dla navigacji poziomej */
+
+.head1 {
+  height: 80vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  background-image: url(../zdjecia/deer.jpg);
+  margin-bottom: 100px;
+}
+
+header h1 {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 80vh;
+  line-height: 80vh;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+}
+
+/* media nav i header */
+@media (max-width: 1024px) {
+  .head1 {
+    background-position: center;
+  }
+}
+
+@media (max-width: 990px) {
+  nav {
+    margin: 0;
+    padding: 20px 0;
+    text-align: right;
+    position: fixed;
+    z-index: 9;
+    background-color: #eee;
+  }
+
+  nav a {
+    font-size: 2rem;
+    padding: 10px;
+    margin: 0 5px;
+  }
+
+  nav a.logs {
+    padding: 10px 10px;
+    margin: 0 30px 0 40px;
+    font-size: 2rem;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    margin: 0;
+    padding: 15px 0;
+    text-align: left;
+    position: fixed;
+    z-index: 9;
+    background-color: #eee;
+  }
+
+  nav a {
+    font-size: 1.8rem;
+    padding: 10px;
+    margin: 0 20px;
+  }
+
+  nav a.logs {
+    padding: 10px 10px;
+    margin: 0 10px 0 20px;
+    font-size: 2rem;
+    box-shadow: none;
+  }
+
+  nav a.logs:hover {
+    box-shadow: none;
+  }
+
+  nav a:nth-of-type(4):hover {
+    border-bottom: none;
+  }
+
+  nav a:nth-of-type(3):hover {
+    border-bottom: none;
+  }
+
+  nav a:nth-of-type(2):hover {
+    border-bottom: none;
+  }
+
+  nav a:nth-of-type(1):hover {
+    border-bottom: none;
+  }
+
+  .head1 {
+    margin-bottom: 50px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
+/* koniec */
+
+/* sekcja 1 o kole !!! ma wjezdzac 2 z lewej i srodkowy z prawej  */
+
+.s1 h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 60px;
+}
+
+.s1 .art1 h2,
+.s1 .art2 h2,
+.s1 .art3 h2 {
+  background-color: royalblue;
+  font-size: 3rem;
+  padding: 20px 0 20px 10vh;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+.s1 .art1 img,
+.s1 .art2 img,
+.s1 .art3 img {
+  width: 300px;
+  height: 256px;
+  border-radius: 20%;
+  margin: 0 30px;
+  box-shadow: 0 -3px 7px 4px red;
+  float: left;
+}
+
+.s1 .art1 p,
+.s1 .art3 p {
+  font-size: 2.2rem;
+  padding-right: 60px;
+  line-height: 2;
+}
+
+.s1 .art2 ul {
+  list-style: none;
+}
+
+.s1 .art2 li {
+  font-size: 2.2rem;
+  padding-right: 60px;
+  line-height: 2;
+}
+
+.s1 article {
+  margin-bottom: 30px;
+}
+
+/* wjazd */
+.s1 .art1,
+.s1 .art3 {
+  transform: translateX(-120vw);
+  transition: 1s;
+}
+
+.s1 .art2 {
+  transform: translateX(120vw);
+  transition: 1s;
+}
+
+.s1 .art1.active,
+.s1 .art2.active,
+.s1 .art3.active {
+  transform: translateX(0);
+}
+
+/* mq dla s1 */
+
+@media (max-width: 768px) {
+  .s1 {
+    padding-top: 60px;
+  }
+
+  .s1 h1 {
+    font-size: 3rem;
+  }
+
+  .s1 .art1 h2,
+  .s1 .art2 h2,
+  .s1 .art3 h2 {
+    font-size: 2.5rem;
+    padding: 10px 0 10px 10vh;
+  }
+
+  .s1 .art1 img,
+  .s1 .art2 img,
+  .s1 .art3 img {
+    width: 250px;
+    height: 216px;
+  }
+
+  .s1 .art1 p,
+  .s1 .art3 p {
+    font-size: 1.8rem;
+    padding-right: 40px;
+  }
+
+  .s1 .art2 li {
+    font-size: 1.8rem;
+    padding-right: 40px;
+  }
+}
+
+/* sekcja 2 obwody !!! maja się pojawiac gdy sie dojedzie do niego */
+
+.s2 h1 {
+  margin: 100px 0 60px 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.s2 .art4 h2,
+.s2 .art5 h2,
+.s2 .art6 h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.s2 .art4 img,
+.s2 .art5 img,
+.s2 .art6 img {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  transition: 1s;
+  transform: scale(0);
+}
+
+.s2 .art4 p,
+.s2 .art5 p,
+.s2 .art6 p {
+  display: block;
+  max-width: 1280px;
+  font-size: 2rem;
+  padding: 10px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin: 0 auto;
+}
+
+.s2 .art4 p span,
+.s2 .art5 p span,
+.s2 .art6 p span {
+  color: royalblue;
+}
+
+.s2 .art4,
+.s2 .art5,
+.s2 .art6 {
+  margin-bottom: 70px;
+}
+
+/* mq dla sekcji 2 */
+@media (max-width: 1200px) {
+  .s2 .art4 img,
+  .s2 .art5 img,
+  .s2 .art6 img {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 990px) {
+  .s2 .art4 img,
+  .s2 .art5 img,
+  .s2 .art6 img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .s2 {
+    padding-top: 60px;
+  }
+
+  .s2 h1 {
+    margin: 50px 0 60px 0;
+    font-size: 3rem;
+  }
+
+  .s2 .art4 h2,
+  .s2 .art5 h2,
+  .s2 .art6 h2 {
+    font-size: 1.8rem;
+  }
+
+  .s2 .art4 img,
+  .s2 .art5 img,
+  .s2 .art6 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .s2 .art4 p,
+  .s2 .art5 p,
+  .s2 .art6 p {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+}
+
+/* pojawienie się gdy się użyje scrolla */
+.s2 .art4 img.active {
+  transform: scale(1);
+}
+
+.s2 .art5 img.active {
+  transform: scale(1);
+}
+
+.s2 .art6 img.active {
+  transform: scale(1);
+}
+
+/* sekcja 3 czlonkowie */
+.s3 h1 {
+  margin: 100px 0 60px 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.s3 .art7 p {
+  margin-left: 50px;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.s3 .art7 p:nth-of-type(2) {
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-left: 90px;
+}
+
+.s3 .art7 ul {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.s3 .art7 ul li {
+  font-size: 1.8rem;
+  padding: 5px;
+  text-align: left;
+}
+
+.wrap {
+  text-align: center;
+}
+
+.s3 .art7 {
+  margin-bottom: 70px;
+}
+
+/* mq dla s3 członków */
+@media (max-width: 768px) {
+  .s3 {
+    padding-top: 60px;
+  }
+
+  .s3 h1 {
+    margin: 50px 0 60px 0;
+    font-size: 3rem;
+  }
+
+  .s3 .art7 p {
+    font-size: 1.8rem;
+  }
+
+  .s3 .art7 ul li {
+    font-size: 1.5rem;
+  }
+
+  .s3 .art7 {
+    margin-bottom: 60px;
+  }
+}
+
+/* sekcja władze koła */
+.s4 h1 {
+  margin: 100px 0 60px 0;
+  text-align: center;
+  font-size: 4rem;
+}
+
+/* css */
+.s4 .wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.s4 .item {
+  height: 40vh;
+  flex-basis: 34%;
+  flex-grow: 0;
+  float: left;
+  background-position: center;
+  color: white;
+  font-size: 2.2rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.s4 .item p {
+  width: 400px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  padding: 80px 80px;
+  transition: 0.3s;
+}
+
+.item {
+  background-size: 100%;
+  transition: 1s;
+}
+
+.item:nth-of-type(1) {
+  background-image: url(../zdjecia/e2.jpg);
+}
+
+.item:nth-of-type(2) {
+  background-image: url(../zdjecia/lowczy.jpg);
+}
+
+.item:nth-of-type(3) {
+  background-image: url(../zdjecia/e3.jpg);
+}
+
+.item:nth-of-type(4) {
+  background-image: url(../zdjecia/e4.jpg);
+}
+
+.item p:nth-of-type(2) {
+  opacity: 0;
+}
+
+.item p:nth-of-type(1) {
+  opacity: 1;
+}
+
+.item:hover p:nth-of-type(2) {
+  opacity: 1;
+}
+
+.item:hover p:nth-of-type(1) {
+  opacity: 0;
+}
+
+.item:hover {
+  background-size: 130%;
+}
+
+/* media dla sekcji 4 wladze kola */
+@media (max-width: 990px) {
+  .s4 {
+    padding-top: 60px;
+  }
+
+  .s4 h1 {
+    margin: 50px 0 60px 0;
+    font-size: 3rem;
+  }
+
+  .s4 .item {
+    height: 30vh;
+    flex-basis: 50%;
+  }
+
+  .s4 .item p {
+    padding: 0;
+  }
+
+  .s4 .item p:nth-of-type(2) {
+    transform: translate(-50%, 30%);
+  }
+
+  .item {
+    background-size: 100%;
+    transition: 1s;
+  }
+
+  .item p:nth-of-type(2) {
+    opacity: 1;
+  }
+
+  .item p:nth-of-type(1) {
+    opacity: 1;
+  }
+
+  .item:hover p:nth-of-type(2) {
+    opacity: 1;
+  }
+
+  .item:hover p:nth-of-type(1) {
+    opacity: 1;
+  }
+
+  .item:hover {
+    background-size: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .s4 {
+    padding-top: 60px;
+  }
+
+  .s4 h1 {
+    margin: 50px 0 60px 0;
+    font-size: 3rem;
+  }
+
+  .s4 .item {
+    height: 20vh;
+    flex-basis: 50%;
+  }
+
+  .s4 .item p {
+    padding: 0;
+  }
+
+  .s4 .item p:nth-of-type(2) {
+    transform: translate(-50%, 30%);
+  }
+
+  .item {
+    background-size: 100%;
+    transition: 1s;
+  }
+
+  .item p:nth-of-type(2) {
+    opacity: 1;
+  }
+
+  .item p:nth-of-type(1) {
+    opacity: 1;
+  }
+
+  .item:hover p:nth-of-type(2) {
+    opacity: 1;
+  }
+
+  .item:hover p:nth-of-type(1) {
+    opacity: 1;
+  }
+
+  .item:hover {
+    background-size: 100%;
+  }
+}
+
+/* stopka */
+footer {
+  height: 15vh;
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  color: white;
+}
+
+footer p:nth-of-type(1) {
+  font-size: 1.8rem;
+  position: absolute;
+  top: 50%;
+  letter-spacing: 2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer p:nth-of-type(2) {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 8%;
+  letter-spacing: 2px;
+  right: 5%;
+}
+
+/* media stopka */
+@media (max-width: 768px) {
+  footer p:nth-of-type(1) {
+    display: inline-block;
+    line-height: 15vh;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  footer p:nth-of-type(2) {
+    font-size: 1.3rem;
+  }
+}
+
+/* button gora */
+.btn1 {
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  transition: 1s;
+}
+
+.btn1.active {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: royalblue;
+  border: 3px solid black;
+  cursor: pointer;
+  transition: 1s;
+  overflow: hidden;
+}
+
+i {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 23px;
+  color: white;
+  text-shadow: 0 10px 0 white, 0 -10px 0 white;
+  animation: move 3s linear infinite;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes move {
+  40% {
+    transform: translate(-50%, 250%);
+  }
+
+  100% {
+    transform: translate(-50%, -250%);
+  }
+}

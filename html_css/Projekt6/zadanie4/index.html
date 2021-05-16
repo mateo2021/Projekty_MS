@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    
+        div{
+            background-color: skyblue;
+            float: left;
+            animation: move 0.3s linear both;
+            
+        }
+        @keyframes move{
+            0%{
+            height: 0;
+            width: 0; 
+            transform: rotate(0);
+            }
+            100%{            
+            height: 100px;
+            width: 100px; 
+            transform: rotate(360deg);
+            
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="js">Dawaj JS</button>
+    <button class="jq">Dawaj JQ</button>
+    <br>
+    <br>
+
+
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    
+    <script>
+
+        $(".jq").on('click',function(){
+          $('body').append('<div class="xxx"></div>');  
+        })
+       
+        let div = document.querySelector('.js');
+
+       div.addEventListener('click',function(){
+       const el = document.createElement('div');
+       el.classList.add("pudelko");
+        //el.className = "pudelko1";
+       //el.setAttribute('class',"pudelko3");
+       document.body.appendChild(el);
+        });
+
+    
+        
+    </script>
+</body>
+</html>

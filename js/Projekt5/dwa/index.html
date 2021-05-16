@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 5vh;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+label,
+input{
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+}
+div{
+    border: 3px solid black;
+    font-size: 35px;
+    margin: 20px;
+}
+.active{
+    background-color: #000;
+    color:white;
+}
+</style>
+</head>
+<body>
+<label for="pass">Wprowadz hasło:</label><input id="pass" type="text">
+<div class="message"></div>
+</body>
+<script>
+    const input = document.getElementById('pass');
+    const div = document.querySelector('div');
+
+    
+    const passwords=['jedEN',"Dwa"];
+    const message=['super','dziala'];
+
+    const mapTab = passwords.map((pass)=>{
+        pass.toLowerCase();
+    })
+
+    const showMessage=(e)=>{
+
+        // const getPassword = e.target.value.toLowerCase();
+        // console.log(getPassword);
+
+        // passwords.forEach((m,i)=>{
+        //     const pass = m.toLowerCase();
+        //     console.log(pass);
+        //     if(pass===getPassword){
+        //         div.textContent=message[i];
+        //         e.target.value =" ";
+        //     }
+            
+        //})
+
+        const getPassword = e.target.value.toLowerCase();
+        console.log(getPassword);
+
+        for(let i=0;i<mapTab.length;i++){
+            if(getPassword===mapTab[i]){
+                div.textContent=message[i];
+            }
+        }
+
+        
+    }  
+
+    input.addEventListener('input',showMessage);
+
+    input.addEventListener('focus',function(){
+        input.classList.add("active");
+    })
+
+    input.addEventListener('blur',function(){
+        input.classList.remove('active');
+    })
+</script>
+</html>
